@@ -131,7 +131,7 @@
       <DebugInformationFormat>None</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libUI.lib;libAssignment1.lib;libAssignment2a.lib;libAssignment2b.lib;libAssignment4.lib;libfbxsdk.lib;glew32.lib;DevIL.lib;ILU.lib;ILUT.lib;AntTweakBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libUI.lib;libAssignment1-soln.lib;libAssignment2a-soln.lib;libAssignment2b-soln.lib;libAssignment4.lib;libfbxsdk.lib;glew32.lib;DevIL.lib;ILU.lib;ILUT.lib;AntTweakBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>.\..\lib;.\..\3rdparty\DevIL1.6.7\lib;.\..\3rdparty\AntTweakBar.1.16\lib;.\..\3rdparty\FBX.SDK.2014.2\lib\vs2008\x86\release;.\..\3rdparty\glut\glutx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>

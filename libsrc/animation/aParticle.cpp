@@ -160,13 +160,18 @@ void AParticle::computeForces(int mode)
 void AParticle::computeDynamics(vector<float>& state, vector<float>& stateDot, float deltaT)
 {
 	//TODO: Add your code here
-
-	
-
-
-
-
-
+	stateDot[0] = state[3]; 
+	stateDot[1] = state[4]; 
+	stateDot[2] = state[5]; 
+	stateDot[3] = state[6] / state[9]; 
+	stateDot[4] = state[7] / state[9]; 
+	stateDot[5] = state[8] / state[9]; 
+	stateDot[6] = 0.0; 
+	stateDot[7] = 0.0; 
+	stateDot[8] = 0.0; 
+	stateDot[9] = 0.0; 
+	stateDot[10] = -1; 
+	stateDot[11] = 0.0; 
 
 }
 
@@ -180,16 +185,26 @@ void AParticle::updateState(float deltaT, int integratorType)
 	{
 		case EULER:
 			// Add your code here
-
-
+			for (int i = 0; i < 12; i++) {
+				m_state[i] = m_state[i] + (deltaT * m_stateDot[i]); 
+			}
 
 			break;
 
 		case RK2:
-		{
-			
+		{			
 			// Add your code here
+			vector <float> pred_state; 
+			for (int i = 0; i < 12; i++) {
+				pred_state.push_back(m_state[i] + (deltaT * m_stateDot[i]));
+			}
+			vector <float> pred_stateDot; 
+			pred_state.resize(m_dim); 
+			computeDynamics(pred_state, pred_stateDot, deltaT); 
 
+			for (int i = 0; i < 12; i++) {
+				m_state[i] = m_state[i] + (deltaT / 2) * (m_state[i] + pred_stateDot[i]);  
+			}
 
 			break;
 		}
