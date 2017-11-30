@@ -181,8 +181,8 @@ void ASpark::resolveCollisions()
 // resolves collisions of the spark with the ground
 {
 	//TODO: Add  code here that reverses the y value of the spark velocity vector when the y position value of the spark is < 0
-	if (m_state[1] < 0) {
-		m_state[4] = -m_state[4]; 
+	if (m_Pos[1] < 0) {
+		m_Vel[1] = -m_Vel[1]; 
 	}
 
 }

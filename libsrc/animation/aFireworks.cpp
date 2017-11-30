@@ -99,8 +99,8 @@ void AFireworks::fireRocket(float posx, float* color)
 	stateVals[0] = posx; 
 	stateVals[1] = posy; 
 	stateVals[2] = 0.0;
-	stateVals[3] = (rand() %61 + 60) * cos(rand() %31 + 80); 
-	stateVals[4] = (rand() % 61 + 60) * sin(rand() % 31 + 80);
+	stateVals[3] = (rand() %61 + 60) * cos((rand() %31 + 80) * (M_PI / 180)); 
+	stateVals[4] = (rand() % 61 + 60) * sin((rand() % 31 + 80) * (M_PI/180));
 	stateVals[5] = 0.0;
 	stateVals[6] = 0.0;
 	stateVals[7] = 50.0 * GRAVITY; 
@@ -165,8 +165,8 @@ void AFireworks::explode(float rocketPosx, float rocketPosy, float rocketPosz,
 		stateVals[0] = rocketPosx;
 		stateVals[1] = rocketPosy; 
 		stateVals[2] = 0.0; 
-		stateVals[3] = rocketVelx + (rand() % 21 + 20) * cos(rand() % 361);
-		stateVals[4] = rocketVely + (rand() % 21 + 20) * sin(rand() % 361);
+		stateVals[3] = rocketVelx + (rand() % 21 + 20) * cos((rand() % 361) * (M_PI/ 180));
+		stateVals[4] = rocketVely + (rand() % 21 + 20) * sin((rand() % 361) * (M_PI/180));
 		stateVals[5] = 0.0;
 		stateVals[6] = 0.0; 
 		stateVals[7] = 50.0 * GRAVITY;
